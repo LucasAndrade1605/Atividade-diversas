@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="_css/fale_conosco.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="specs.html">
+                    <li>Especificações</li>
+                </a>
+                <a href="fotos.html">
+                    <li>Fotos</li>
+                </a>
+                <a href="multimidia.html">
+                    <li>Multimídia</li>
+                </a>
+                <a href="fale-conosco.html">
+                    <li>Fale Conosco</li>
+                </a>
+            </ul>
+        </nav>
+
+        <h1 style="margin-left: 15px; font-size: 50px;">Google Glass</h1>
+        <h3 style="margin-left: 15px; font-size: 25px;">A revolução do Google está chegando</h3>
+        
+        <div id="titulo_glass"></div>
+        <figure id="oculos" class="legenda">
+            <img src="_imagens/glass-oculos-preto-peq.png" alt="">
+            <figcaption>
+                <h3>Óculos</h3>
+            </figcaption>
+        </figure>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Fale Conosco > Contato</h2>
+        <h3>por Lucas Pereira de Andrade</h3>
+        <h3>Atualizado em 01/04/2024</h3>
+
+        <form action="" method="post">
+            <table>
+                
+                <!-- primeira parte da tabela
+                os tr é linha da coluna
+                os td uma coluna, ordem esquerda para direita -->    
+                <tr>
+                    <th colspan="2">Identificação do Usuário</th>
+                </tr>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" name="nome"></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="email" name="email" ></td>
+                </tr>
+                <tr>
+                    <td>Sexo</td>
+                    <td>
+                        <input type="radio" id="masculino" name="sexo" value="masculino">
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" id="feminino" name="sexo" value="feminino">
+                        <label for="feminino"> Feminino</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Data de Nascimento</td>
+                    <td><input type="date" name="data_nascimento"></td>
+                </tr>
+                <tr>
+                    <td>Logradouro</td>
+                    <td><input type="text" name="Logradouro" ></td>
+                </tr>
+                <tr>
+                    <td>Número</td>
+                    <td><input type="text" name="numero"></td>
+                </tr>
+                <tr>
+                    <td>Cidade</td>
+                    <td><input type="text" name="cidade"></td>
+                </tr>
+                <tr>
+
+                    <!-- colspan serve para fazer uma outra parte de tabela
+                    mas sem se separar da tabela como um todo -->
+                    <!-- Segunda Tabela -->
+                    <th colspan="2">Mensagem do Usuário</th>
+                </tr>
+                <tr>
+                    <td>Grau de Urgência</td>
+                    <td>
+                        <select name="grau_urgencia" id="">
+                            <option value="baixo">Baixo</option>
+                            <option value="médio">Médio</option>
+                            <option value="alto">Alto</option>
+                        </select>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mensagem</td>
+                    <td><textarea name="mensagem" cols="50" rows="4"></textarea></td>
+                </tr>
+                <!-- Terceira Tabela -->
+                <tr>
+                    <th colspan="2">Quero um Google Glass</th>
+                </tr>
+                <tr>
+                    <td>Gostaria de adquirir um Google Glass quando disponível</td>
+                    <td><input type="checkbox" name="adquirir_glass"></td>
+                </tr>
+                <tr>
+                    <td>Cor</td>
+                    <td><input type="text" name="cor"></td>
+                </tr>
+                <tr>
+                    <td>Quantidade</td>
+                    <td><input type="number" name="quantidade" min="1"></td>
+                </tr>
+                <tr>
+                    <td>Preço Total</td>
+                    <td>R$ <input type="number" name="preco_total" step="0.01" min="0"></td>
+                </tr>
+            </table>
+            <div id="botao" >
+                <input type="submit" name="ENVIAR">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div>
+            &copy; Lucas Andrade
+        </div>
+        <h3><a href="https://github.com/LucasAndrade1605" title="Ir para github">GitHub</a> | <a href="#" title="Ir para twitter">Twitter</a></h3>
+    </footer>
+</body>
+</html>
