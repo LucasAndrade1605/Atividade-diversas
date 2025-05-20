@@ -1,10 +1,9 @@
 package com.devsuperior.dslist.model;
 
-import java.util.UUID;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -19,10 +18,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "tb_game")
 public class Game {
 	
-	 	@Id
-	    @GeneratedValue
-	    @Column(nullable = false)
-	    private UUID id;
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @Column(name = "id", updatable = false)
+	    private Long id;
 
 	    @Column(nullable = false, length = 100)
 	    private String titulo;
