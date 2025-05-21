@@ -1,6 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.model.Game;
+import com.devsuperior.dslist.projections.GameMinProjection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,14 @@ public class GameMinDto {
     private String descricaoCurta;
     
     public GameMinDto(Game game) {
+    	this.id = game.getId();
+    	this.titulo = game.getTitulo();
+    	this.ano = game.getAno();
+    	this.imgUrl = game.getImgUrl();
+    	this.descricaoCurta = game.getDescricaoCurta();
+    }
+    
+    public GameMinDto(GameMinProjection game) {
     	this.id = game.getId();
     	this.titulo = game.getTitulo();
     	this.ano = game.getAno();

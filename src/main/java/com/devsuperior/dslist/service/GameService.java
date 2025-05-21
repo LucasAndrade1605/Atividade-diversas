@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.devsuperior.dslist.dto.GameMinDto;
 import com.devsuperior.dslist.model.Game;
 import com.devsuperior.dslist.model.GameDto;
+import com.devsuperior.dslist.projections.GameMinProjection;
 import com.devsuperior.dslist.repository.IGameRepository;
 
 @Service
@@ -35,6 +36,13 @@ public class GameService {
 	@Transactional(readOnly = true)
 	public GameDto findById(Long id) {
 		return new GameDto(gameRepository.findById(id).get());
+	}
+	
+	@Transactional(readOnly = true)
+	public List<GameMinDto> findByList(Long listId){
+		List<GameMinProjection> listaGamePJ = gameRepository.searchByList(listId);
+		
+		return listaGamePJ.stream().map(x -> new GameMinDto(x)).toList();
 	}
 
 }
