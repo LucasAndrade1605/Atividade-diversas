@@ -7,10 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.devsuperior.dslist.dto.GameListDto;
 import com.devsuperior.dslist.dto.GameMinDto;
+import com.devsuperior.dslist.dto.ReplacementDto;
 import com.devsuperior.dslist.model.GameDto;
 import com.devsuperior.dslist.service.GameListService;
 import com.devsuperior.dslist.service.GameService;
@@ -40,4 +43,10 @@ public class GameListController {
 //	public ResponseEntity<GameListDto> findById(@PathVariable Long id){
 //		return ResponseEntity.ok(gameListService.findById(id));
 //	}
+	
+	@PostMapping("/{listId}/move")
+	public ResponseEntity<?> move(@PathVariable Long listId, @RequestBody ReplacementDto body){
+		gameListService.move(listId, body.getIndexAtual(), body.getIndexDestino());
+		return ResponseEntity.ok("Atualizacao completa");
+	}
 }
